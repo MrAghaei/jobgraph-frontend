@@ -5,7 +5,11 @@ import { SectionShell } from "@/components/landing/section-shell";
 
 export function FinalCta() {
   return (
-    <SectionShell tone="ink" innerClassName="py-16 md:py-20">
+    <SectionShell
+      tone="ink"
+      innerClassName="py-16 md:py-20"
+      className="bg-primary dark:bg-primary/30"
+    >
       <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div className="max-w-2xl space-y-3">
           <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">

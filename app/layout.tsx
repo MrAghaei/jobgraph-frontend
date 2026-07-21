@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist_Mono, Vazirmatn, Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+
+const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||!t&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.classList.add("dark")}}catch(e){}})();`;
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -30,6 +34,7 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
+      suppressHydrationWarning
       className={cn(
         "h-full antialiased",
         inter.variable,
@@ -38,7 +43,12 @@ export default function RootLayout({
         "font-sans",
       )}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

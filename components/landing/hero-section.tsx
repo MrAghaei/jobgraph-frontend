@@ -60,7 +60,7 @@ export function JobFeedPreview() {
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_top,oklch(0.97_0_0),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-72" />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
         <div className="space-y-8 landing-enter">

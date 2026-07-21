@@ -5,7 +5,11 @@ export function MarketPulse() {
   const maxShare = Math.max(...marketStats.topSkills.map((s) => s.share));
 
   return (
-    <SectionShell id="market" tone="muted" className="bg-primary">
+    <SectionShell
+      id="market"
+      tone="muted"
+      className="bg-primary dark:bg-primary/30"
+    >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-end lg:gap-16">
         <div className="space-y-8">
           <div className="space-y-4">
