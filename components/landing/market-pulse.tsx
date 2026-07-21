@@ -5,41 +5,43 @@ export function MarketPulse() {
   const maxShare = Math.max(...marketStats.topSkills.map((s) => s.share));
 
   return (
-    <SectionShell id="market" tone="muted">
+    <SectionShell id="market" tone="muted" className="bg-primary">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-end lg:gap-16">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h2 className="max-w-lg text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+            <h2 className="max-w-lg text-balance text-3xl font-semibold tracking-tight text-primary-foreground md:text-4xl">
               نبض بازار، نه شعار بازاریابی
             </h2>
-            <p className="max-w-prose text-pretty text-base leading-7 text-muted-foreground">
-              تعداد آگهی‌های فعال، مهارت‌های پرتقاضا و سهم دورکاری — داده‌ای
-              که به انتخاب شغل بعدی‌تان کمک می‌کند.
+            <p className="max-w-prose text-pretty text-base leading-7 text-primary-foreground/75">
+              تعداد آگهی‌های فعال، مهارت‌های پرتقاضا و سهم دورکاری — داده‌ای که
+              به انتخاب شغل بعدی‌تان کمک می‌کند.
             </p>
           </div>
 
           <dl className="grid gap-6 sm:grid-cols-3">
             <div className="space-y-1">
-              <dt className="text-sm text-muted-foreground">آگهی فعال</dt>
-              <dd className="font-mono text-3xl font-medium tracking-tight text-foreground">
+              <dt className="text-sm text-primary-foreground/75">آگهی فعال</dt>
+              <dd className="font-mono text-3xl font-medium tracking-tight text-primary-foreground">
                 {formatFaNumber(marketStats.activeJobs)}
               </dd>
             </div>
             <div className="space-y-1">
-              <dt className="text-sm text-muted-foreground">جدید امروز</dt>
-              <dd className="font-mono text-3xl font-medium tracking-tight text-foreground">
+              <dt className="text-sm text-primary-foreground/75">جدید امروز</dt>
+              <dd className="font-mono text-3xl font-medium tracking-tight text-primary-foreground">
                 {formatFaNumber(marketStats.newToday)}
               </dd>
             </div>
             <div className="space-y-1">
-              <dt className="text-sm text-muted-foreground">سهم دورکاری</dt>
-              <dd className="font-mono text-3xl font-medium tracking-tight text-foreground">
+              <dt className="text-sm text-primary-foreground/75">
+                سهم دورکاری
+              </dt>
+              <dd className="font-mono text-3xl font-medium tracking-tight text-primary-foreground">
                 {formatFaNumber(marketStats.remoteShare)}٪
               </dd>
             </div>
           </dl>
 
-          <p className="font-mono text-xs text-muted-foreground">
+          <p className="font-mono text-xs text-primary-foreground/60">
             آخرین به‌روزرسانی · {formatFaNumber(marketStats.updatedMinutesAgo)}{" "}
             دقیقه پیش
           </p>

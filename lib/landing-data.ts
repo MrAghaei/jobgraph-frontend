@@ -5,8 +5,6 @@ export function formatFaNumber(value: number): string {
 export const sources = [
   { name: "جابینجا", slug: "jobinja" },
   { name: "جاب‌ویژن", slug: "jobvision" },
-  { name: "کوئرا", slug: "quera" },
-  { name: "لینکدین", slug: "linkedin" },
 ] as const;
 
 export const heroJobs = [

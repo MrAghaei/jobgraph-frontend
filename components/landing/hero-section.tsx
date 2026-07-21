@@ -66,8 +66,8 @@ export function HeroSection() {
         <div className="space-y-8 landing-enter">
           <div className="space-y-5">
             <p className="max-w-xl text-pretty text-lg leading-8 text-muted-foreground">
-              آگهی‌های تکنولوژی از چند برد کاری — یک فید، یک جستجو، یک
-              تصویر از بازار.
+              آگهی‌های تکنولوژی از چند برد کاری — یک فید، یک جستجو، یک تصویر از
+              بازار.
             </p>
             <h1 className="max-w-2xl text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
               بازار کار را بخوانید، نه فقط اسکرول کنید

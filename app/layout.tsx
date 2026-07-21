@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Vazirmatn } from "next/font/google";
+import { Geist_Mono, Vazirmatn, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const vazirmatn = Vazirmatn({
-  subsets: ["arabic", "latin"],
-  variable: "--font-sans",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -30,9 +32,10 @@ export default function RootLayout({
       dir="rtl"
       className={cn(
         "h-full antialiased",
-        vazirmatn.variable,
+        inter.variable,
         geistMono.variable,
-        "font-sans"
+        vazirmatn.variable,
+        "font-sans",
       )}
     >
       <body className="flex min-h-full flex-col">{children}</body>
