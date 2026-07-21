@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-21T07:55:00.000Z",
+  "title": "Design System: Jobgraph",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.25 0 0)",
+          "oklch(0.35 0 0)",
+          "oklch(0.45 0 0)",
+          "oklch(0.55 0 0)",
+          "oklch(0.65 0 0)",
+          "oklch(0.75 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(0.92 0 0)",
+          "oklch(0.97 0 0)",
+          "oklch(1 0 0)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Near Ink",
+        "canonical": "oklch(0.145 0 0)",
+        "tonalRamp": [
+          "oklch(0.10 0 0)",
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.35 0 0)",
+          "oklch(0.45 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.65 0 0)",
+          "oklch(0.75 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Ink Action",
+        "canonical": "oklch(0.205 0 0)",
+        "tonalRamp": [
+          "oklch(0.10 0 0)",
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.35 0 0)",
+          "oklch(0.45 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.65 0 0)",
+          "oklch(0.75 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "destructive": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "oklch(0.577 0.245 27.325)",
+        "tonalRamp": [
+          "oklch(0.25 0.12 27)",
+          "oklch(0.35 0.16 27)",
+          "oklch(0.45 0.20 27)",
+          "oklch(0.50 0.22 27)",
+          "oklch(0.577 0.245 27)",
+          "oklch(0.65 0.20 27)",
+          "oklch(0.75 0.14 27)",
+          "oklch(0.85 0.08 27)",
+          "oklch(0.92 0.04 27)",
+          "oklch(0.97 0.02 27)",
+          "oklch(0.99 0.01 27)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Whisper Text",
+        "canonical": "oklch(0.556 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.25 0 0)",
+          "oklch(0.35 0 0)",
+          "oklch(0.45 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.65 0 0)",
+          "oklch(0.75 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(0.92 0 0)",
+          "oklch(0.97 0 0)",
+          "oklch(1 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default UI copy, list items, form labels."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headers, card titles, dialog titles."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles, empty-state headers."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges, table headers, filter chips."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Numeric data, market stats, job IDs."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Default easing for button and state transitions (ease-out-quart approximation)."
+      },
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Hover and focus transitions."
+      },
+      {
+        "name": "duration-normal",
+        "value": "200ms",
+        "purpose": "Active press and fill transitions."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action — search, apply, confirm.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Start searching</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0 0.75rem; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: oklch(0.985 0 0); background: oklch(0.205 0 0); border: 1px solid transparent; border-radius: 1.625rem; cursor: pointer; transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1), transform 150ms cubic-bezier(0.25, 1, 0.5, 1); outline: none; white-space: nowrap; } .ds-btn-primary:hover { background: color-mix(in oklch, oklch(0.205 0 0) 80%, transparent); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px color-mix(in oklch, oklch(0.708 0 0) 30%, transparent); } .ds-btn-primary:disabled { opacity: 0.5; pointer-events: none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions — cancel, learn more, alternate paths.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Learn how it works</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0 0.75rem; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: oklch(0.145 0 0); background: oklch(1 0 0); border: 1px solid oklch(0.922 0 0); border-radius: 1.625rem; cursor: pointer; transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1), transform 150ms cubic-bezier(0.25, 1, 0.5, 1); outline: none; white-space: nowrap; } .ds-btn-outline:hover { background: oklch(0.97 0 0); } .ds-btn-outline:active { transform: translateY(1px); } .ds-btn-outline:focus-visible { border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px color-mix(in oklch, oklch(0.708 0 0) 30%, transparent); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Tertiary actions in toolbars and dense UI.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Filters</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0 0.75rem; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: oklch(0.145 0 0); background: transparent; border: 1px solid transparent; border-radius: 1.625rem; cursor: pointer; transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1); outline: none; white-space: nowrap; } .ds-btn-ghost:hover { background: oklch(0.97 0 0); } .ds-btn-ghost:focus-visible { border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px color-mix(in oklch, oklch(0.708 0 0) 30%, transparent); }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Primary search field for jobs and roles.",
+      "html": "<div class=\"ds-input-wrap\"><input class=\"ds-input\" type=\"search\" placeholder=\"Role, company, or skill…\" aria-label=\"Search jobs\" /></div>",
+      "css": ".ds-input-wrap { width: 100%; max-width: 28rem; } .ds-input { width: 100%; height: 2.25rem; padding: 0 0.75rem; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: oklch(0.145 0 0); background: oklch(1 0 0); border: 1px solid oklch(0.922 0 0); border-radius: 0.625rem; outline: none; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: oklch(0.556 0 0); } .ds-input:hover { border-color: oklch(0.708 0 0); } .ds-input:focus-visible { border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px color-mix(in oklch, oklch(0.708 0 0) 30%, transparent); }"
+    },
+    {
+      "name": "Stat Block",
+      "kind": "custom",
+      "refersTo": "stat-block",
+      "description": "Market analytics figure with mono number and label descriptor.",
+      "html": "<div class=\"ds-stat\"><span class=\"ds-stat-value\">12.4k</span><span class=\"ds-stat-label\">Open roles this week</span></div>",
+      "css": ".ds-stat { display: flex; flex-direction: column; gap: 0.25rem; } .ds-stat-value { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 1.125rem; font-weight: 500; color: oklch(0.145 0 0); letter-spacing: -0.02em; } .ds-stat-label { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: oklch(0.556 0 0); }"
+    },
+    {
+      "name": "Job List Item",
+      "kind": "custom",
+      "refersTo": "job-list-item",
+      "description": "Dense job row for search results — title, company, salary in mono.",
+      "html": "<article class=\"ds-job-item\"><div class=\"ds-job-main\"><h3 class=\"ds-job-title\">Senior Frontend Engineer</h3><p class=\"ds-job-company\">Linear</p></div><span class=\"ds-job-salary\">$180–220k</span></article>",
+      "css": ".ds-job-item { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 1rem; background: oklch(1 0 0); border: 1px solid oklch(0.922 0 0); border-radius: 0.625rem; cursor: pointer; transition: background 150ms; } .ds-job-item:hover { background: oklch(0.97 0 0); } .ds-job-main { display: flex; flex-direction: column; gap: 0.125rem; min-width: 0; } .ds-job-title { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; color: oklch(0.145 0 0); margin: 0; } .ds-job-company { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 400; color: oklch(0.556 0 0); margin: 0; } .ds-job-salary { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 0.8125rem; font-weight: 400; color: oklch(0.145 0 0); white-space: nowrap; flex-shrink: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Market Terminal",
+    "overview": "Jobgraph is a tool for people who are tired of tab-hopping across job boards. The interface should feel like a sharp command surface — closer to Arc or Raycast than Indeed — where search, listings, and market analytics sit in one coherent workspace. Visual noise is the enemy: every pixel should reduce time-to-decision, not decorate the journey.\n\nThe system is built on shadcn/base-ui primitives with an achromatic OKLCH token layer. Surfaces stay flat and legible; depth comes from borders, subtle surface shifts, and focus rings — not drop shadows or gradient heroics.",
+    "keyCharacteristics": [
+      "Restrained achromatic palette with semantic color reserved for state",
+      "Single sans (Inter) for UI; Geist Mono for figures and code",
+      "Pill-shaped controls with tactile active press",
+      "Border-and-ring elevation, not shadow stacks",
+      "150–250ms state transitions; no page-load choreography",
+      "Dark mode via .dark class with inverted neutrals"
+    ],
+    "rules": [
+      {
+        "name": "The Pure Surface Rule",
+        "body": "Backgrounds are oklch(1 0 0) in light mode — not warm-tinted near-white. Warmth and identity live in accent and typography choices, not the page canvas.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Accent Rule",
+        "body": "Primary is achromatic today. When brand color arrives, it replaces primary fill only and stays ≤10% of any screen. Rarity is the point.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Scale Rule",
+        "body": "Product UI uses fixed rem sizes, not clamp(). Sidebar and panel contexts shrink content — fluid headings look broken at narrow widths.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono-for-Numbers Rule",
+        "body": "Any figure that influences a decision (salary range, applicant count, trend delta) renders in Geist Mono. Prose stays Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces rest flat. Elevation appears only as a response to state — hover fill, focus ring, active press — never as ambient decoration.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No-Glass Rule",
+        "body": "Backdrop blur and glassmorphism are prohibited unless a specific overlay (modal scrim) requires it — and even then, prefer a solid scrim at 60–80% opacity.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Inter for all UI text and Geist Mono for numeric data.",
+      "Do keep backgrounds pure white (oklch(1 0 0)) in light mode.",
+      "Do use pill buttons with active press feedback for primary actions.",
+      "Do show market stats and job counts as live data, not marketing copy.",
+      "Do respect reduced motion — crossfade or instant state changes under prefers-reduced-motion: reduce.",
+      "Do maintain ≥4.5:1 contrast on body text and ≥3:1 on large text."
+    ],
+    "donts": [
+      "Don't use generic SaaS landing-page clichés: cream backgrounds, gradient heroes, \"AI-powered\" eyebrows on every section.",
+      "Don't reproduce classic job board clutter: dense ads, noisy filters, endless list fatigue.",
+      "Don't drift into corporate enterprise UI: gray tables, stock photos, synergy energy.",
+      "Don't use overly playful startup aesthetics: mascots, bouncy motion, cartoon illustrations.",
+      "Don't use side-stripe borders (border-left > 1px as colored accent on cards or list items).",
+      "Don't use gradient text (background-clip: text).",
+      "Don't default to glassmorphism or shadow stacks for cards.",
+      "Don't use the hero-metric template (big number, small label, gradient accent).",
+      "Don't put tiny uppercase tracked eyebrows above every section."
+    ]
+  }
+}

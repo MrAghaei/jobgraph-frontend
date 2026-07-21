@@ -1,0 +1,22 @@
+---
+description: Design context for Jobgraph — read before any UI work
+alwaysApply: true
+---
+
+# Design Context
+
+Before designing or editing UI in this project, read:
+
+- **`PRODUCT.md`** — users, purpose, positioning, brand personality, anti-references, strategic principles
+- **`DESIGN.md`** — colors, typography, elevation, components, do's and don'ts (tokens in YAML frontmatter are normative)
+
+## Quick reference
+
+- **Register:** product (tool-first job search + market analytics)
+- **Platform:** web (Next.js 16, Tailwind 4, shadcn/base-ui)
+- **North star:** "The Market Terminal" — sharp, Arc/Raycast-like, not a job board
+- **Palette:** achromatic OKLCH neutrals today; pure white surfaces, ink primary actions
+- **Type:** Inter (UI) + Geist Mono (numbers/data); fixed rem scale, no fluid headings
+- **Voice:** Direct, fast, data-forward. Show stats, don't sell with adjectives.
+
+Impeccable commands (`/impeccable craft`, `/impeccable polish`, etc.) load both files automatically.
