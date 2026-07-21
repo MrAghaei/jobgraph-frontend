@@ -103,6 +103,7 @@ This system explicitly rejects generic SaaS landing clichés, job-board clutter,
 - Border-and-ring elevation, not shadow stacks
 - 150–250ms state transitions; no page-load choreography
 - Dark mode via `.dark` class with inverted neutrals
+- RTL-first layout support for Iranian users (mirrored navigation, spacing, and text alignment)
 
 ## Colors
 
@@ -137,7 +138,7 @@ A neutral, tool-first palette: pure white backgrounds, near-black ink, and gray 
 **Body Font:** Inter (with system-ui, sans-serif)
 **Label/Mono Font:** Geist Mono (with ui-monospace, monospace)
 
-**Character:** One sans carries the entire UI — no display/body pairing. Inter at medium weights feels precise and familiar (Linear, Stripe dashboard territory). Mono is reserved for salaries, counts, IDs, and chart axes.
+**Character:** One sans carries the entire UI — no display/body pairing. Inter at medium weights feels precise and familiar (Linear, Stripe dashboard territory). Mono is reserved for salaries, counts, IDs, and chart axes. For Persian/Arabic copy, ensure the loaded font subsets include the required glyphs.
 
 ### Hierarchy
 
