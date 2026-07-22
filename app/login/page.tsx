@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/landing/site-header";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 
 export const metadata = {
   title: "ورود — جاب‌گراف",
@@ -20,12 +19,9 @@ export default function LoginPage() {
               آزاد است.
             </p>
           </div>
-          <Button
-            className="w-full"
-            render={<Link href="/jobs" />}
-          >
+          <ButtonLink className="w-full" href="/jobs">
             ادامه بدون ورود
-          </Button>
+          </ButtonLink>
         </div>
       </main>
       <SiteFooter />

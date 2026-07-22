@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { Bell, Mail, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/landing/section-shell";
 
 const proFeatures = [
@@ -37,9 +36,9 @@ export function ProAlerts() {
             چند دقیقه تأخیر می‌تواند همان تفاوت باشد. پلن پرو برای همین
             لحظه‌هاست.
           </p>
-          <Button size="lg" className="h-11" render={<Link href="/signup" />}>
+          <ButtonLink size="lg" className="h-11" href="/signup">
             شروع پلن پرو
-          </Button>
+          </ButtonLink>
         </div>
 
         <ul className="space-y-0 divide-y divide-border rounded-xl border border-border bg-card">
