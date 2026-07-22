@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UserNav } from "@/components/auth/user-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ButtonLink } from "@/components/ui/button-link";
 
@@ -36,9 +37,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <ButtonLink variant="ghost" size="sm" href="/login">
-            ورود
-          </ButtonLink>
+          <UserNav />
           <ButtonLink size="sm" href="/jobs">
             مشاهده آگهی‌ها
           </ButtonLink>

@@ -1,5 +1,8 @@
+import { Suspense } from "react";
 import { SiteHeader } from "@/components/landing/site-header";
 import { SiteFooter } from "@/components/landing/site-footer";
+import { LoginForm } from "@/components/auth/login-form";
+import { AuthFormSkeleton } from "@/components/auth/google-button";
 import { ButtonLink } from "@/components/ui/button-link";
 
 export const metadata = {
@@ -19,7 +22,12 @@ export default function LoginPage() {
               آزاد است.
             </p>
           </div>
-          <ButtonLink className="w-full" href="/jobs">
+
+          <Suspense fallback={<AuthFormSkeleton />}>
+            <LoginForm />
+          </Suspense>
+
+          <ButtonLink variant="ghost" className="w-full" href="/jobs">
             ادامه بدون ورود
           </ButtonLink>
         </div>
