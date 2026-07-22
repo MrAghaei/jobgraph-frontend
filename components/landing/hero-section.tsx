@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { heroJobs } from "@/lib/landing-data";
 
 export function JobFeedPreview() {
@@ -75,22 +74,22 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button
+            <ButtonLink
               size="lg"
               className="h-11 px-5 text-base"
-              render={<Link href="/jobs" />}
+              href="/jobs"
             >
               مشاهده آگهی‌ها
               <ArrowLeft className="size-4" aria-hidden="true" />
-            </Button>
-            <Button
+            </ButtonLink>
+            <ButtonLink
               variant="outline"
               size="lg"
               className="h-11 px-5"
-              render={<Link href="#market" />}
+              href="#market"
             >
               آمار بازار کار
-            </Button>
+            </ButtonLink>
           </div>
 
           <p className="max-w-lg text-sm leading-6 text-muted-foreground">

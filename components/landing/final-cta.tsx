@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/landing/section-shell";
 
 export function FinalCta() {
@@ -22,23 +21,23 @@ export function FinalCta() {
         </div>
 
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <Button
+          <ButtonLink
             size="lg"
             variant="secondary"
             className="h-11 w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 sm:w-auto"
-            render={<Link href="/jobs" />}
+            href="/jobs"
           >
             ورود به آگهی‌ها
             <ArrowLeft className="size-4" aria-hidden="true" />
-          </Button>
-          <Button
+          </ButtonLink>
+          <ButtonLink
             size="lg"
             variant="outline"
             className="h-11 w-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"
-            render={<Link href="/signup" />}
+            href="/signup"
           >
             پلن پرو
-          </Button>
+          </ButtonLink>
         </div>
       </div>
     </SectionShell>

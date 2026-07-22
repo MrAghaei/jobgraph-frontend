@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 
 const navItems = [
   { href: "/jobs", label: "آگهی‌ها" },
@@ -36,12 +36,12 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="ghost" size="sm" render={<Link href="/login" />}>
+          <ButtonLink variant="ghost" size="sm" href="/login">
             ورود
-          </Button>
-          <Button size="sm" render={<Link href="/jobs" />}>
+          </ButtonLink>
+          <ButtonLink size="sm" href="/jobs">
             مشاهده آگهی‌ها
-          </Button>
+          </ButtonLink>
         </div>
       </div>
     </header>

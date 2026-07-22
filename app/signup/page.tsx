@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/landing/site-header";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 
 export const metadata = {
   title: "پلن پرو — جاب‌گراف",
@@ -24,13 +24,9 @@ export default function SignupPage() {
             <Button disabled className="w-full">
               ثبت‌نام — به‌زودی
             </Button>
-            <Button
-              variant="outline"
-              className="w-full"
-              render={<Link href="/jobs" />}
-            >
+            <ButtonLink variant="outline" className="w-full" href="/jobs">
               فعلاً آگهی‌ها را ببینید
-            </Button>
+            </ButtonLink>
           </div>
         </div>
       </main>
