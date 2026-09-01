@@ -16,7 +16,9 @@ export function ThemeToggle() {
       aria-label={theme === "dark" ? "حالت روشن" : "حالت تاریک"}
       title={theme === "dark" ? "حالت روشن" : "حالت تاریک"}
     >
-      {theme === "dark" ? <Sun /> : <Moon />}
+      <span suppressHydrationWarning>
+        {theme === "dark" ? <Sun /> : <Moon />}
+      </span>
     </Button>
   );
 }

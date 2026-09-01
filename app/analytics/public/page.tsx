@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/landing/site-header";
 import { SiteFooter } from "@/components/landing/site-footer";
+import { PublicAnalyticsView } from "@/components/analytics/public-analytics-view";
 
 export const metadata = {
   title: "تحلیل بازار — جاب‌گراف",
@@ -17,28 +18,10 @@ export default function PublicAnalyticsPage() {
               تحلیل بازار
             </h1>
             <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-              شاخص‌های پایه بازار کار — بدون نیاز به ثبت‌نام. برای تحلیل
-              عمیق‌تر، پلن پرو را ببینید.
+              حجم آگهی فعال و پرتقاضاترین مهارت‌ها در ۳۰ روز گذشته.
             </p>
           </div>
-
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              { label: "آگهی فعال", value: "۱,۲۴۷" },
-              { label: "میانگین حقوق", value: "۴۲M" },
-              { label: "رشد هفتگی", value: "+۱۲٪" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl border border-border bg-card p-5"
-              >
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-                <p className="mt-2 font-mono text-2xl font-semibold">
-                  {stat.value}
-                </p>
-              </div>
-            ))}
-          </div>
+          <PublicAnalyticsView />
         </div>
       </main>
       <SiteFooter />

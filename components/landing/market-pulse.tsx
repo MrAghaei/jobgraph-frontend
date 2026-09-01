@@ -1,8 +1,25 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
 import { SectionShell } from "@/components/landing/section-shell";
 import { formatFaNumber, marketStats } from "@/lib/landing-data";
+import { fetchBasicAnalytics } from "@/lib/jobs-api";
 
 export function MarketPulse() {
-  const maxShare = Math.max(...marketStats.topSkills.map((s) => s.share));
+  const query = useQuery({
+    queryKey: ["analytics-basic-landing"],
+    queryFn: fetchBasicAnalytics,
+    retry: false,
+  });
+
+  const activeJobs =
+    query.data?.activeJobsLast30Days ?? marketStats.activeJobs;
+  const skills =
+    query.data?.topTechnologies.map((item) => ({
+      name: item.name,
+      share: item.count,
+    })) ?? marketStats.topSkills;
+  const maxShare = Math.max(...skills.map((s) => s.share), 1);
 
   return (
     <SectionShell
@@ -26,7 +43,7 @@ export function MarketPulse() {
             <div className="space-y-1">
               <dt className="text-sm text-primary-foreground/75">آگهی فعال</dt>
               <dd className="font-mono text-3xl font-medium tracking-tight text-primary-foreground">
-                {formatFaNumber(marketStats.activeJobs)}
+                {formatFaNumber(activeJobs)}
               </dd>
             </div>
             <div className="space-y-1">
@@ -44,11 +61,6 @@ export function MarketPulse() {
               </dd>
             </div>
           </dl>
-
-          <p className="font-mono text-xs text-primary-foreground/60">
-            آخرین به‌روزرسانی · {formatFaNumber(marketStats.updatedMinutesAgo)}{" "}
-            دقیقه پیش
-          </p>
         </div>
 
         <div className="rounded-xl border border-border bg-card p-5 md:p-6">
@@ -62,14 +74,14 @@ export function MarketPulse() {
           </div>
 
           <ul className="space-y-4" aria-label="نمودار مهارت‌های پرتقاضا">
-            {marketStats.topSkills.map((skill) => (
+            {skills.slice(0, 5).map((skill) => (
               <li key={skill.name} className="space-y-2">
                 <div className="flex items-center justify-between gap-3 text-sm">
                   <span className="font-medium text-foreground">
                     {skill.name}
                   </span>
                   <span className="font-mono text-xs text-muted-foreground">
-                    {formatFaNumber(skill.share)}٪
+                    {formatFaNumber(skill.share)}
                   </span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-secondary">

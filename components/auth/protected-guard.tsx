@@ -31,7 +31,7 @@ function ProUpgradeBanner() {
         خلاصه ایمیل و تحلیل عمیق‌تر بازار.
       </p>
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-        <ButtonLink href="/signup">ارتقا به پرو</ButtonLink>
+        <ButtonLink href="/pricing">ارتقا به پرو</ButtonLink>
         <ButtonLink variant="outline" href="/jobs">
           بازگشت به آگهی‌ها
         </ButtonLink>
