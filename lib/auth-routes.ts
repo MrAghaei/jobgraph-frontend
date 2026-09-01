@@ -8,6 +8,8 @@ const PUBLIC_EXACT = new Set([
   "/auth/callback",
   "/jobs",
   "/analytics/public",
+  "/pricing",
+  "/billing/callback",
 ]);
 
 export function isProtectedPath(pathname: string): boolean {

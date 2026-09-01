@@ -116,6 +116,7 @@ export async function apiClient<T>(
     ...options,
     headers,
     credentials: "include",
+    cache: options.cache ?? "no-store",
   };
 
   let response = await fetch(`${API_URL}${path}`, requestInit);
@@ -137,6 +138,7 @@ export async function apiClient<T>(
         ...options,
         headers,
         credentials: "include",
+        cache: options.cache ?? "no-store",
       });
     } else {
       handleAuthFailure();

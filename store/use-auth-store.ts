@@ -24,7 +24,16 @@ export const useAuthStore = create<AuthState>((set) => ({
   isAuthenticated: false,
   isInitializing: true,
   setAuth: (user, accessToken) =>
-    set({ user, accessToken, isAuthenticated: true, isInitializing: false }),
+    set({
+      user: {
+        ...user,
+        isPro:
+          user.isPro ?? (user.role === "PRO" || user.role === "ADMIN"),
+      },
+      accessToken,
+      isAuthenticated: true,
+      isInitializing: false,
+    }),
   clearAuth: () =>
     set({
       user: null,

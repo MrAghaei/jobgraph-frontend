@@ -5,8 +5,8 @@ import { ButtonLink } from "@/components/ui/button-link";
 
 const navItems = [
   { href: "/jobs", label: "آگهی‌ها" },
-  { href: "#market", label: "بازار کار" },
-  { href: "#pro", label: "پلن پرو" },
+  { href: "/analytics/public", label: "بازار کار" },
+  { href: "/pricing", label: "پلن پرو" },
 ] as const;
 
 export function SiteHeader() {

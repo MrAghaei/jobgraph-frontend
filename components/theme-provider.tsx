@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
 } from "react";
 
 type Theme = "light" | "dark";
@@ -18,11 +18,20 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-function getPreferredTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "light";
-  }
+const listeners = new Set<() => void>();
 
+function emit() {
+  for (const listener of listeners) listener();
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getPreferredTheme(): Theme {
   const stored = window.localStorage.getItem("theme");
   if (stored === "light" || stored === "dark") {
     return stored;
@@ -38,21 +47,21 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const theme = useSyncExternalStore(
+    subscribe,
+    getPreferredTheme,
+    () => "light" as const,
+  );
 
   useEffect(() => {
-    const initialTheme = getPreferredTheme();
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
-  }, []);
+    applyTheme(theme);
+  }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    setTheme((current) => {
-      const next = current === "light" ? "dark" : "light";
-      window.localStorage.setItem("theme", next);
-      applyTheme(next);
-      return next;
-    });
+    const next = getPreferredTheme() === "light" ? "dark" : "light";
+    window.localStorage.setItem("theme", next);
+    applyTheme(next);
+    emit();
   }, []);
 
   const value = useMemo(
